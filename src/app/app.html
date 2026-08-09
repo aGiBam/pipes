@@ -62,9 +62,11 @@
     <div class="col">
       <label for=""><b>Kilometers</b></label>
       <div>
-        {{ miles | convert:'km' }}
+        @if ((miles | convert:'km') > 10 ){
+        {{ miles | convert:'km' | number:'1.0-2' }}
         <!-- {{ miles | convert:'m' }} -->
         <!-- {{ miles | convert:'cm' }} -->
+      }
       </div>
     </div>
   </div>
